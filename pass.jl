@@ -1,5 +1,5 @@
-#import Pkg
-#Pkg.add("MD5")
+import Pkg
+Pkg.add("MD5")
 
 using MD5
 password = Dict{String, String}()
