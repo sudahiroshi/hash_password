@@ -1,9 +1,9 @@
-#import Pkg
-#Pkg.add("MD5")
-using MD5
+using SHA
 
 while true
   print("->")
-  readline() |> md5 |> bytes2hex |> println
+  word = readline()
+  if( word == "end" ) break end
+  word |> sha2_256 |> bytes2hex |> println
 end
 

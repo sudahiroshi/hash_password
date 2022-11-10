@@ -1,7 +1,4 @@
-import Pkg
-Pkg.add("MD5")
-
-using MD5
+using SHA
 password = Dict{String, String}()
 
 open("shadow", "r") do f
@@ -20,7 +17,7 @@ pass = readline()
 
 if( name in ks )
   ex2 = split( password[name], "\$" )
-  hash = ( pass * ex2[3] ) |> md5 |> bytes2hex
+  hash = ( pass * ex2[3] ) |> sha2_256 |> bytes2hex
   if( hash == ex2[4] )
     println("ログインできました")
   else

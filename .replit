@@ -1,2 +1,5 @@
 language = "julia"
 run = "julia pass.jl"
+
+[nix]
+channel = "stable-22_05"
